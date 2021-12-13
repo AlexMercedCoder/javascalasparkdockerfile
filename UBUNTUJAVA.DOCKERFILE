@@ -30,8 +30,8 @@ RUN sudo apt install postgresql -y
 
 ## Setup Postgres User and Database for docker user
 USER postgres
-COPY init_userdb.sql /var/lib/postgresql/
-RUN service postgresql start && psql -f ~/init_userdb.sql
+COPY init_userdb.sql /home/postgres/
+RUN service postgresql start && psql -f /home/postgres/init_userdb.sql && service postgresql stop
 
 ## SWITCH back to docker user
 USER docker
