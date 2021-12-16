@@ -63,6 +63,9 @@ RUN ./cs install scala3-compiler
 ## Install Git
 RUN sudo apt install git -y
 
+## Install Python 2 and Pip/Pip3
+RUN sudo apt-get install python pip -y
+
 ## Set Home to Workdir
 WORKDIR /home/docker/
 
